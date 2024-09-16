@@ -1,0 +1,22 @@
+.button-component {
+    display: inline-block;
+    height: max-content;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 13px;
+    color: hsl(12, 98%, 52%);
+    background-color: #fff;
+    align-self: center;
+    padding: 20px 40px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.button-component.button-component--orange {
+    background-color: hsl(12, 98%, 52%);
+    color: #fff;
+}
+
+.button-component:hover {
+    background-color: hsl(210, 26%, 11%);
+}

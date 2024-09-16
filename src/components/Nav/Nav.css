@@ -1,0 +1,218 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    transition: all 0.3s;
+}
+
+.nav.fadein-nav {
+    transform: translateY(-101%);
+    background-color: #fff;
+    animation: fadeIn 0.5s ease forwards;
+    box-shadow: 0 0 20px hsl(0, 0%, 0%, 0.1);
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateY(-101%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.nav-open-menu {
+    display: none;
+}
+
+.nav__container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns:max-content 1fr max-content;
+    justify-content: space-between;
+    grid-gap: 40px;
+}
+
+.nav__logo {
+    font-weight: 900;
+    font-size: 35px;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    grid-gap: 3px;
+}
+
+.nav.fadein-nav .nav__logo {
+    color: var(--rich-black-fogra-29-1);
+}
+
+.nav__logo-img {
+    width: 35px;
+    margin-bottom: 5px;
+}
+
+.nav__menu {
+    height: max-content;
+    align-self: center;
+    justify-self: end;
+}
+
+.nav__menu__links {
+    height: max-content;
+    display: grid;
+    grid-template-columns: repeat(5,max-content);
+    list-style: none;
+    grid-gap: 20px;
+}
+
+.nav__menu__links-link {
+    text-transform: capitalize;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav__menu__links-link[href='#home'],
+.nav.fadein-nav .nav__menu__links-link[href='#home'] {
+    color: var(--coquelicot);
+}
+
+.nav.fadein-nav .nav__menu__links-link {
+    color: var(--rich-black-fogra-29-1);
+}
+
+.nav.fadein-nav .nav__menu__links-link:hover {
+    color: var(--coquelicot);
+}
+
+.nav__menu-close {
+    display: none;
+}
+
+
+/* NAV CTA del Button component */
+.nav.fadein-nav .button-component {
+    background-color: var(--coquelicot);
+    color: #fff;
+}
+
+.nav.fadein-nav .button-component:hover {
+    background-color: var(--rich-black-fogra-29-1);
+}
+
+
+
+@media screen and (max-width: 880px) {
+    .nav {
+        background-color: #fff;
+    }
+
+    .nav__container {
+        grid-template-columns: repeat(2, max-content);
+    }
+    
+    .nav .button-component {
+        display: none;
+    }
+
+    .nav__logo {
+        color: var(--rich-black-fogra-29-1);
+    }
+
+    .nav-open-menu {
+        display: block;
+        height: max-content;
+        align-self: center;
+        border: none;
+        outline: none;
+        background-color: var(--coquelicot);
+        color: #fff;
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        font-size: 30px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .nav__menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 50;
+        opacity: 0;
+        transform: translateY(101%);
+        pointer-events: none;
+        background-color: var(--coquelicot);
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease-in;
+    }
+
+    .nav__menu.show-menu {
+        transform: translateY(0%);
+        opacity: 1;
+        pointer-events: unset;
+    }
+
+    .nav__menu__links {
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+        text-align: center;
+    }
+
+    .nav__menu__links-link {
+        font-size: 20px;
+    }
+
+    .nav__menu__links-link[href='#home'],
+    .nav.fadein-nav .nav__menu__links-link[href='#home'] {
+        color: #fff;
+    }
+
+    .nav.fadein-nav .nav__menu__links-link:hover {
+        color: #fff;
+    }
+
+    .nav__menu-close {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 5%;
+        border: none;
+        outline: none;
+        background-color: var(--rich-black-fogra-29-1);
+        width: 55px;
+        height: 55px;
+        border-radius: 10px;
+        cursor: pointer;
+        color: #fff;
+        font-size: 35px;
+        font-weight: 500;
+    }
+}
+
+
+@media screen and (max-width: 430px) {
+    .nav__logo {
+        font-size: 30px;
+    }
+
+    .nav-open-menu {
+        width: 45px;
+        height: 45px;
+        font-size: 25px;
+    }
+}

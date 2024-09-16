@@ -1,0 +1,25 @@
+.scroll-top {
+    display: block;
+    background-color: hsl(12, 98%, 52%);
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 30px;
+    transform: translateY(100px);
+    right: 2.5%;
+    z-index: 100;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.scroll-top.show-scroll-btn {
+    transform: translateY(0);
+    opacity: 1;
+}

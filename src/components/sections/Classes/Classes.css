@@ -1,0 +1,13 @@
+.classes {
+    background-color: hsl(210, 26%, 11%);
+    background-image: url(/images/classes-bg.png);
+}
+
+swiper-container {
+    cursor: grab !important;
+    margin-top: 50px;
+}
+
+swiper-container:active {
+    cursor: grabbing;
+}

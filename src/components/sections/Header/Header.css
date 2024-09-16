@@ -1,0 +1,279 @@
+.header {
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--rich-black-fogra-29-1);
+    background-image: url(/images/hero-bg.png);
+    position: relative;
+    z-index: 10;
+}
+
+.header::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 30%;
+    background-color: var(--coquelicot);
+    z-index: -1;
+}
+
+.header__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1100px;
+    height: 100%;
+    padding-top: 100px;
+}
+
+.header__texts {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    grid-gap: 30px;
+}
+
+.header__texts-legend {
+    width: max-content;
+    background-color: var(--white_10);
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.header__texts-legend span {
+    font-weight: 500;
+    display: inline-block;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.header__texts-legend span.bg {
+    background-color: var(--coquelicot);
+}
+
+.header__texts-title {
+    font-size: 50px;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 900;
+    font-family: 'Catamaran', sans-serif;
+}
+
+.header__texts-description {
+    color: var(--cadet-gray);
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.header__texts-cta {
+    width: max-content;
+    display: inline-block;
+    border: none;
+    outline: none;
+    padding: 20px 40px;
+    background-color: var(--coquelicot);
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.header__texts-cta:hover {
+    color: var(--coquelicot);
+    background-color: #fff;
+}
+
+.header__image {
+    width: 100%;
+    display: grid;
+}
+
+.header__image-img {
+    width: 100%;
+    height: 95%;
+    object-fit: cover;
+    align-self: end;
+}
+
+.header__card-icon {
+    position: absolute;
+    z-index: 5;
+    animation: moveCard 3s linear infinite alternate;
+}
+
+.header__card-icon.header__card-icon--calories {
+    bottom: 30px;
+    right: 380px;
+    animation-delay: 1s;
+}
+
+.header__card-icon.header__card-icon--heart {
+    bottom: 220px;
+    right: 100px;
+}
+
+.header-circle {
+    position: absolute;
+    right: 0;
+    bottom: -70px;
+    z-index: -1;
+    width: 50%;
+    animation: rotate360 15s linear infinite;
+}
+
+.header-circle.header-circle--two {
+    animation-delay: 5s;
+}
+
+@keyframes rotate360 {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+
+@keyframes moveCard {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-5px, 10px);
+    }
+    100% {
+        transform: translate(5px, 20px);
+    }
+}
+
+
+@media screen and (max-width: 1280px) {
+    .header__card-icon.header__card-icon--calories {
+        right: 220px;
+        bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .header__texts-title {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .header {
+        height: max-content;
+    }
+
+    .header::after {
+        top: initial;
+        bottom: 0;
+        width: 100%;
+        height: 280px;
+    }
+
+    .header__container {
+        grid-template-columns: 1fr;
+    }
+
+    .header__texts {
+        align-items: center;
+        text-align: center;
+        grid-gap: 20px;
+        max-width: 600px;
+        justify-self: center;
+        padding-top: 80px;
+    }
+
+    .header__image {
+        max-width: 600px;
+        justify-self: center;
+    }
+
+    .header-circle {
+        width: 70%;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+
+    .header__card-icon.header__card-icon--calories {
+        right: initial;
+        left: 50px;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .header__image-img {
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .header-circle {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header::after {
+        height: 200px;
+    }
+
+    .header__card-icon.header__card-icon--heart {
+        width: 220px;
+        right: 10px;
+        bottom: 120px;
+    }
+
+    .header__card-icon.header__card-icon--calories {
+        width: 300px;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .header::after {
+        height: 120px;
+    }
+
+    .header__texts-legend,
+    .header__texts-description {
+        font-size: 16px;
+    }
+
+    .header__texts-title {
+        font-size: 35px;
+    }
+    
+    .header__texts-cta {
+        padding: 15px 35px;
+    }
+
+    .header__image-img {
+        width: 100%;
+    }
+
+    .header__card-icon.header__card-icon--heart {
+        width: 180px;
+        right: 0;
+        bottom: 80px;
+    }
+
+    .header__card-icon.header__card-icon--calories {
+        width: 250px;
+        bottom: -30px;
+    }
+}
